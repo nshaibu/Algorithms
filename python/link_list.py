@@ -53,7 +53,7 @@ class LinkedList:
         curr = self.head
         inlist = False
 
-        while curr != None:
+        while curr is not None:
             if curr.get_data() == param:
                 inlist = True
                 break
@@ -63,10 +63,10 @@ class LinkedList:
         return inlist
     
     def size(self):
-        count = 0;
+        count = 0
         curr = self.head
         
-        while curr != None: 
+        while curr is not None:
             count += 1
             curr = curr.get_next()
         
@@ -76,23 +76,23 @@ class LinkedList:
         curr = self.head
         prev = self.head
         
-        if value == None:
+        if value is None:
             sys.exit(1)
             
-        while curr != None:
+        while curr is not None:
             if curr.get_data() == value:
                 prev.set_next(curr.get_next())
             prev = curr 
             curr = curr.get_next()
-            
-    
+
     def append(self, param):
         curr = self.head
         
-        if param == None: sys.exit(1)
+        if param is None:
+            return None
         
-        while curr != None:
-            if curr.get_next() == None:
+        while curr is not None:
+            if curr.get_next() is None:
                 tmp = Node()
                 tmp.set_data(param)
                 tmp.set_next()
@@ -105,8 +105,8 @@ class LinkedList:
     def __str__(self):
         curr = self.head 
         lt = list()        
-        while curr != None: 
-            lt.append(curr.get_data()); 
+        while curr is not None:
+            lt.append(curr.get_data())
             curr = curr.get_next()
         
         return str(lt)
